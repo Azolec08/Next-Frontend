@@ -5,6 +5,7 @@ import Links from "../Navlink/Links";
 import { NavLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import style from "./Navlink.module.scss";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Nav = () => {
   const session = false;
@@ -12,7 +13,7 @@ const Nav = () => {
 
   const pathName = usePathname();
   return (
-    <div className="p-2 flex lg:grid lg:grid-flow-col items-center">
+    <div className="p-2 flex lg:grid  lg:grid-flow-col items-center">
       <div className="flex-1">
         <Link href="/" className="btn btn-ghost text-xl">
           daisyUI
@@ -30,7 +31,7 @@ const Nav = () => {
           );
         })}
       </div>
-      <div className="">
+      <div className="flex justify-end">
         {session ? (
           <div className="flex items-center justify-end">
             <div className="">
@@ -45,6 +46,13 @@ const Nav = () => {
             <Links data={{ title: "Login", path: "/login" }} />
           </div>
         )}
+        <div
+          className="flex items-center mr-3 cursor-pointer text-2xl
+        lg:hidden
+        "
+        >
+          <GiHamburgerMenu />
+        </div>
       </div>
     </div>
   );
