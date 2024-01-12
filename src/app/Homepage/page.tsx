@@ -1,5 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Anime Homepage",
+  description: "Homepage Description",
+};
 
 const Homepage = () => {
   return (
@@ -21,7 +27,7 @@ const Homepage = () => {
               />
             </div>
           </div>
-          <div className="col-span-4">
+          <div className="col-span-4 p-3">
             <h1 className="text-3xl font-bold">Box Office News!</h1>
             <p className="py-6 xl">
               Anime allows viewers to temporarily immerse themselves in
