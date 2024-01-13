@@ -3,7 +3,7 @@
   transition: all 500ms ease-in-out;
   height: 100vh;
   background: rgba(232, 235, 232, 0.9);
-  width: 200px;
+  width: 250px;
   top: 0;
   right: 0;
   z-index: 10;
@@ -13,11 +13,11 @@
 .hideBar {
   position: fixed;
   transition: all 500ms ease-in-out;
-  width: 200px;
+  width: 250px;
   height: 100vh;
   background: rgba(232, 235, 232, 0.9);
   top: 0;
   z-index: 10;
-  right: -200px;
+  right: -250px;
   border-radius: 8px 0 0 8px;
 }

@@ -54,18 +54,18 @@ const Nav = () => {
         )}
         <div
           onClick={() => dispatch({ type: "SIDESWITCH", payload: true })}
-          className="flex items-center mr-3 cursor-pointer text-2xl 
+          className="flex items-center mr-3 cursor-pointer text-2xl p-2
         lg:hidden
         "
         >
           {/* Switch Icon Humburger to Arrow */}
           {state.switch ? (
             <>
-              <FaCircleArrowRight className="animate-pulse" />
+              <FaCircleArrowRight className="animate-pulse " />
             </>
           ) : (
             <>
-              <GiHamburgerMenu className="animate-pulse" />
+              <GiHamburgerMenu className="animate-pulse " />
             </>
           )}
         </div>
