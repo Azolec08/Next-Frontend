@@ -1,0 +1,23 @@
+.showBar {
+  position: fixed;
+  transition: all 500ms ease-in-out;
+  height: 100vh;
+  background: rgba(232, 235, 232, 0.9);
+  width: 200px;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  border-radius: 8px 0 0 8px;
+}
+
+.hideBar {
+  position: fixed;
+  transition: all 500ms ease-in-out;
+  width: 200px;
+  height: 100vh;
+  background: rgba(232, 235, 232, 0.9);
+  top: 0;
+  z-index: 10;
+  right: -200px;
+  border-radius: 8px 0 0 8px;
+}

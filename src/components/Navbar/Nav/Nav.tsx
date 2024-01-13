@@ -1,17 +1,23 @@
 "use client";
-
 import Link from "next/link";
 import Links from "../Navlink/Links";
 import { NavLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import style from "./Navlink.module.scss";
+import "../sidebar/sidebar.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaCircleArrowRight } from "react-icons/fa6";
+import { globalContext } from "@/createContext/Context";
+import Sidebar from "../sidebar/Sidebar";
 
 const Nav = () => {
-  const session = false;
-  const isAdmin = false;
+  const { state, dispatch } = globalContext();
+
+  const session = true;
+  const isAdmin = true;
 
   const pathName = usePathname();
+
   return (
     <div className="p-2 flex lg:grid  lg:grid-flow-col items-center">
       <div className="flex-1">
@@ -47,12 +53,28 @@ const Nav = () => {
           </div>
         )}
         <div
-          className="flex items-center mr-3 cursor-pointer text-2xl
+          onClick={() => dispatch({ type: "SIDESWITCH", payload: true })}
+          className="flex items-center mr-3 cursor-pointer text-2xl 
         lg:hidden
         "
         >
-          <GiHamburgerMenu />
+          {/* Switch Icon Humburger to Arrow */}
+          {state.switch ? (
+            <>
+              <FaCircleArrowRight className="animate-pulse" />
+            </>
+          ) : (
+            <>
+              <GiHamburgerMenu className="animate-pulse" />
+            </>
+          )}
         </div>
+      </div>
+
+      {/* Switch Sidebar to close to open*/}
+
+      <div className={`${state.switch ? "showBar" : "hideBar"}`}>
+        <Sidebar />
       </div>
     </div>
   );
