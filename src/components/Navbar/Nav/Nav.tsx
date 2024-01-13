@@ -54,7 +54,7 @@ const Nav = () => {
         )}
         <div
           onClick={() => dispatch({ type: "SIDESWITCH", payload: true })}
-          className="flex items-center mr-3 cursor-pointer text-2xl p-2
+          className="flex items-center mr-3 cursor-pointer text-2xl p-3
         lg:hidden
         "
         >
