@@ -37,7 +37,7 @@ type childrenType = {
 const reducer: Reducer<stateTypes, actionTypes> = (state, action) => {
   switch (action.type) {
     case "SIDESWITCH":
-      return { ...state, num: !state.switch };
+      return { ...state, switch: action.payload };
     default:
       return state;
   }

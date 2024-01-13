@@ -1,8 +1,8 @@
 export type stateTypes = {
-  navSwitch: boolean;
+  switch: boolean;
 };
 
-export type actionTypes = { type: "INCREMENT" };
+export type actionTypes = { type: "SIDESWITCH"; payload: boolean };
 
 export type LinkTypes = {
   title: string;
