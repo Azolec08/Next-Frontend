@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       unique: true,
       required: true,
-      max: 50,
+      max: 30,
     },
     password: {
       type: String,
@@ -43,7 +43,7 @@ const postSchema = new mongoose.Schema(
     video: {
       type: String,
     },
-    Author: {
+    author: {
       type: String,
     },
     userId: {
