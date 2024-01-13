@@ -39,7 +39,7 @@ const Nav = () => {
       </div>
       <div className="flex justify-end">
         {session ? (
-          <div className="flex items-center justify-end">
+          <div className="flex items-center justify-end px-2">
             <div className="">
               {isAdmin && <Links data={{ title: "Admin", path: "/admin" }} />}
             </div>
@@ -54,18 +54,18 @@ const Nav = () => {
         )}
         <div
           onClick={() => dispatch({ type: "SIDESWITCH", payload: true })}
-          className="flex items-center mr-3 cursor-pointer text-2xl 
+          className="flex items-center mr-3 cursor-pointer text-2xl px-3
         lg:hidden
         "
         >
           {/* Switch Icon Humburger to Arrow */}
           {state.switch ? (
             <>
-              <FaCircleArrowRight className="animate-pulse" />
+              <FaCircleArrowRight className="animate-pulse " />
             </>
           ) : (
             <>
-              <GiHamburgerMenu className="animate-pulse" />
+              <GiHamburgerMenu className="animate-pulse " />
             </>
           )}
         </div>
