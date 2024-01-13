@@ -20,10 +20,10 @@ const Homepage = () => {
             <div className="relative w-[250px] h-[280px]">
               <Image
                 src="/img/ylia.jpg"
-                className="max-w-sm rounded-lg shadow-2xl"
                 alt="HeroImg"
                 fill
                 sizes="max-width: 600px"
+                priority={true}
               />
             </div>
           </div>
