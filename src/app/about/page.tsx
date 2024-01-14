@@ -17,8 +17,8 @@ const page = async () => {
   const allPosts = await getUsers();
   return (
     <div>
-      {allPosts.map((post: any) => {
-        return <div>{post.username}</div>;
+      {allPosts.map((post) => {
+        return <div key={post.slug}>{post.username}</div>;
       })}
     </div>
   );
