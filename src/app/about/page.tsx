@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { getUsers } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Anime About",
+  title: "Anime About App",
   description: "About Description",
 };
 
