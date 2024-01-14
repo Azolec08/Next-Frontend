@@ -1,7 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
-import { PostsCard } from "@/components";
 import { getPosts } from "@/lib/data";
+import PostCard from "@/components/PostCard/PostCard";
+import { PostTypes } from "@/types";
 
 //Search Engine Optimization
 
@@ -10,14 +11,20 @@ export const metadata: Metadata = {
   description: "Anime Blog Description",
 };
 
+// const AnimeApi = async () => {
+//   const api = await fetch("http://localhost:3000/api/blog");
+
+//   return api.json();
+// };
+
 const Blog = async () => {
-  const posts = await getPosts();
+  const allPosts = await getPosts();
   return (
     <div className="w-full flex flex-col lg:grid grid-cols-2 ">
-      {posts.map((data) => {
+      {allPosts.map((posts: PostTypes) => {
         return (
-          <div key={data._id}>
-            <PostsCard data={data} />
+          <div key={posts.slug}>
+            <PostCard posts={posts} />
           </div>
         );
       })}

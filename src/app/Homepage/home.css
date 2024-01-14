@@ -1,0 +1,3 @@
+.responsive_home {
+  @apply hero-content flex-col lg:grid lg:grid-cols-6;
+}

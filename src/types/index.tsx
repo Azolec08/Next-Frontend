@@ -25,3 +25,16 @@ export type PostTypes = {
   createdAt: string;
   updatedAt: string;
 };
+
+//PostUser Types
+
+export type userTypes = {
+  _id: number;
+  username: string;
+  email: string;
+  password: string;
+  image: string;
+  isAdmin: boolean;
+  createdAt: string;
+  updatedAt: string;
+};
