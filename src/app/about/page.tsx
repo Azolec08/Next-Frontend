@@ -7,12 +7,6 @@ export const metadata: Metadata = {
   description: "About Description",
 };
 
-const AnimeApi = async () => {
-  const api = await fetch("http://localhost:3000/api/blog");
-
-  return api.json();
-};
-
 const page = async () => {
   const allPosts = await getUsers();
   return (
