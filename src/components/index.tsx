@@ -1,4 +1,4 @@
 import Navbar from "./Navbar/Navbar";
-import PostsCard from "./postCard/postsCard";
+import PostUser from "./postUser/PostUser";
 
-export { Navbar, PostsCard };
+export { Navbar, PostUser };
