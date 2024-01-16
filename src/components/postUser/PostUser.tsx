@@ -5,9 +5,10 @@ import Image from "next/image";
 
 type userIdProps = {
   userId: userTypes;
+  createdAt: string;
 };
 
-const PostUser = async ({ userId }: userIdProps) => {
+const PostUser = async ({ userId, createdAt }: userIdProps) => {
   const user = await getUser(userId);
   return (
     <section className="flex flex-col gap-y-2">
@@ -20,6 +21,7 @@ const PostUser = async ({ userId }: userIdProps) => {
           className=" rounded-full"
         />
       </div>
+      <div>{createdAt.toString().slice(4, 16)}</div>
       <div>{user.username}</div>
     </section>
   );

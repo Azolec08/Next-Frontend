@@ -18,7 +18,11 @@ const page = async () => {
   return (
     <div>
       {allPosts.map((post) => {
-        return <div key={post.slug}>{post.username}</div>;
+        return (
+          <div key={post.slug}>
+            <h1>{post.username}</h1>
+          </div>
+        );
       })}
     </div>
   );

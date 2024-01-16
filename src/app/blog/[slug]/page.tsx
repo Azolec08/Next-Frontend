@@ -8,16 +8,25 @@ type slugProp = {
   params: PostTypes;
 };
 
-// const AnimeApi = async (slug: string) => {
-//   const api = await fetch(`http://localhost:3000/api/blog/${slug}`);
+const PostData = async (slug: string) => {
+  const api = await fetch(`http://localhost:3000/api/blog/${slug}`);
 
-//   return api.json();
-// };
+  return api.json();
+};
+
+export async function generateMetadata({ params }: slugProp) {
+  const { slug } = params;
+  const post = await PostData(slug);
+  return {
+    title: post.title,
+    description: post.author,
+  };
+}
 
 const Slug = async ({ params }: slugProp) => {
   const { slug } = params;
 
-  const post = await getPost(slug);
+  const post = await PostData(slug);
   return (
     <div>
       <div className="w-full flex justify-center p-3">
@@ -35,7 +44,7 @@ const Slug = async ({ params }: slugProp) => {
           <div className="card-body">
             <div>
               <Suspense fallback={<div>Loading...</div>}>
-                <PostUser userId={post.userId} />
+                <PostUser userId={post.userId} createdAt={post.createdAt} />
               </Suspense>
             </div>
             <h2 className="card-title">{post.title}</h2>
