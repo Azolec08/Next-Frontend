@@ -2,6 +2,7 @@ import React from "react";
 import { PostTypes } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import { deletePost } from "@/lib/action";
 
 type postsProps = {
   posts: PostTypes;
@@ -30,6 +31,9 @@ const PostCard = ({ posts }: postsProps) => {
           </div>
         </div>
       </div>
+      <form action={deletePost}>
+        <button>Delete Post</button>
+      </form>
     </div>
   );
 };
